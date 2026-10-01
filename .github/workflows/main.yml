@@ -1,0 +1,11 @@
+name: Rocket-League
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buildozer Action
+        uses: ArtemGovorov/buildozer-action@v1
+        with:
+          command: buildozer -v android debug
